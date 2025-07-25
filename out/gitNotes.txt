@@ -1,0 +1,120 @@
+✅ Git Commands Summary for Java Notes Project
+📁 1. Initialize Repository
+bash
+Copy
+Edit
+git init
+Initializes a new Git repository in your current project folder.
+
+Output confirms:
+Initialized empty Git repository in ...
+
+🔍 2. Check Status of Files
+bash
+Copy
+Edit
+git status
+Shows you are on the master branch.
+
+Lists untracked files:
+
+.idea/, MyComparator.java, out/ (build output)
+
+➕ 3. Stage Files for Commit
+bash
+Copy
+Edit
+git add .
+Stages all files (including .idea/ and compiled files).
+
+Git shows CRLF warning for line endings (not critical on Windows).
+
+✅ 4. Check Staged Files
+bash
+Copy
+Edit
+git status
+Now displays all added files ready for commit.
+
+Includes:
+
+Source: MyComparator.java
+
+Build: *.class
+
+IDE files: .idea/
+
+📝 5. Make First Commit
+bash
+Copy
+Edit
+git commit -m "First Commint of Repository"
+Commits 14 new files.
+
+Commit ID: eff21fc
+
+Note: "Commint" is a typo; should be "Commit".
+
+🌐 6. Add Remote Repository
+bash
+Copy
+Edit
+git remote add origin https://github.com/atharva-1003/JAVA_Notes.git
+Links local repo to GitHub remote named origin.
+
+🔁 7. Verify Remote
+bash
+Copy
+Edit
+git remote -v
+Shows fetch/push URL for origin.
+
+🚀 8. Push to GitHub
+bash
+Copy
+Edit
+git push origin master
+Uploads your local master branch to GitHub.
+
+All 17 objects (committed files) successfully pushed.
+
+✅ 9. Final Status Check
+bash
+Copy
+Edit
+git status
+Output:
+nothing to commit, working tree clean — Everything is synced.
+
+📜 10. View Commit History
+bash
+Copy
+Edit
+git log
+Shows:
+
+Commit ID
+
+Author
+
+Timestamp
+
+Message: First Commint of Repository
+
+📝 Recommendations
+Add a .gitignore file to exclude:
+
+.idea/
+
+out/ (compiled classes)
+
+This will prevent unnecessary IDE and build files from being tracked.
+
+Sample .gitignore:
+
+csharp
+Copy
+Edit
+.idea/
+out/
+*.class
