@@ -1,15 +1,19 @@
 import java.util.*;
-class StudentComparator implements Comparator<Student>{
 
-    //First Way
-    @Override
-    public int compare(Student o1, Student o2) {
-        if (o1.age==o2.age){
-            return o1.name.compareTo(o2.name);
-        }
-        return o1.age-o2.age;
-    }
-}
+
+//class StudentComparator implements Comparator<Student>{
+//
+//    //First Way
+//    @Override
+//    public int compare(Student o1, Student o2) {
+//        if (o1.age==o2.age){
+//            return o1.name.compareTo(o2.name);
+//        }
+//        return o1.age-o2.age;
+//    }
+//}
+
+
 public class MyComparator{
     public static void main(String[] args) {
         ArrayList<Student> students = new ArrayList<>();
@@ -20,7 +24,22 @@ public class MyComparator{
         for(Student student : students){
             System.out.println(student);
         }
-        Collections.sort(students, new StudentComparator());
+//      First Way  Collections.sort(students, new StudentComparator());
+
+//      Second Way  Collections.sort(students, new Comparator<Student>() {
+//            @Override
+//            public int compare(Student o1, Student o2) {
+//                return o2.getId() - o1.getId();
+//            }
+//        });
+
+//      Third Way  Collections.sort(students, (a,b)-> a.getName().compareTo(b.getName()));
+
+        Collections.sort(students,
+                Comparator.comparing(Student::getAge)
+                        .thenComparing(Student::getId)
+                        .reversed());
+
         for(Student student : students){
             System.out.println(student);
         }
